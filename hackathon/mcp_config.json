@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "podman",
+      "args": [
+        "run",
+        "--rm",
+        "--interactive",
+        "--env",
+        "FASTMCP_LOG_LEVEL=ERROR",
+        "--env",
+        "AWS_DOCUMENTATION_PARTITION=aws",
+        "--env",
+        "REQUESTS_CA_BUNDLE=/cert/key.pem",
+        "--volume",
+        "/Users/B000YA/macos-trusted.pem:/cert/key.pem:ro",
+        "mcp/aws-documentation:latest"
+      ],
+      "env": {},
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

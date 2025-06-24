@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
+  
+  pre_build:
+    commands:
+      - echo Setting up environment...
+      - python -m pip install --upgrade pip
+  
+  build:
+    commands:
+      - echo Running Strand agent...
+      - python strand_agent.py
+  
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - strand_agent.py
+    - requirements.txt
+    - README.md
+    - output/**/*
+  discard-paths: no

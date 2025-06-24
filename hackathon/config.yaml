@@ -1,0 +1,20 @@
+model: gpt-4o
+output_dir: output
+
+tasks:
+  - name: aws_documentation_search
+    description: Search AWS documentation for specific topics
+    parameters:
+      search_phrase: string
+      limit: integer
+  
+  - name: aws_service_documentation
+    description: Get documentation for a specific AWS service
+    parameters:
+      aws_service: string
+  
+  - name: aws_best_practices
+    description: Get best practices for AWS services
+    parameters:
+      aws_service: string
+      topic: string
